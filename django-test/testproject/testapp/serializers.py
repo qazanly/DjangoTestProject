@@ -1,8 +1,15 @@
 from rest_framework import serializers
-from .models import Person
+
+from .models import Person, School
 
 
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = ('person', ' school', 'salary')
+        fields = ('name', 'coolness')
+
+
+class SchoolSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = School
+        fields = ('pk', 'title', 'director')
